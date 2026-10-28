@@ -1,0 +1,21 @@
+# Python / Jupyter
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.venv/
+venv/
+env/
+.DS_Store
+.vscode/
+.idea/
+
+# Dữ liệu của nhóm - chủ động cấp file theo hướng dẫn giảng viên
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Cấu hình máy cá nhân
+.env
+.env.*
