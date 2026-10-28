@@ -40,15 +40,7 @@ Khai_Thac_Du_Lieu_Gr6/
 └── reports/
 ```
 
-**Lưu ý:** Chỉ tên notebook được cố định theo danh sách nhóm. Vai trò ghi trong file là gợi ý dựa trên bảng phân công 6 người; nhóm trưởng có thể điều chỉnh sau. File Excel/CSV chưa được thêm vào repo.
-
-### Cách bắt đầu
-1. Clone repo rồi cài thư viện: `pip install -r requirements.txt`.
-2. Khi nhận dataset của giảng viên, lưu `dry_bean.xlsx` vào `data/raw/` ở máy hoặc Colab; có thể xuất CSV vào `data/processed/`.
-3. Mở đúng `notebooks/<ten>.ipynb` và làm theo các ô TODO.
-4. **Tự tạo nhánh tên-brand** (ví dụ `lan-brand`), commit/push và tạo PR về `main`. **Chưa tạo nhánh nào trước.**
-5. Trưởng nhóm chỉ merge sau khi Notebook chạy đủ ô, có kết quả, nhận xét và đáp ứng yêu cầu giảng viên.
-
+ 
 ### Tài liệu quản lý nhóm
 - [Google Sheet phân công nhiệm vụ](https://docs.google.com/spreadsheets/d/1S9UvotHgvdllcwYeqMPWLBd3pDKOompiFLVUkymPGUs/edit)
 - [Google Docs viết nội dung nhóm](https://docs.google.com/document/d/1vohV3X3LTFEFVwLI99yi0-1EKy5PKIB24TQ7zveuZOY/edit)
