@@ -20,7 +20,7 @@ Khai_Thac_Du_Lieu_Gr6/
 ├── .gitignore
 ├── requirements.txt
 ├── data/
-│   ├── raw/                 # Dry Bean Excel gốc (chưa đưa lên)
+│   ├── raw/                 # Dry Bean Excel gốc (D03 - Dry_Bean_Dataset.xlsx)
 │   └── processed/           # CSV và dữ liệu tiền xử lý
 ├── notebooks/
 │   ├── len.ipynb            # Trưởng nhóm: đánh giá & tổng hợp
