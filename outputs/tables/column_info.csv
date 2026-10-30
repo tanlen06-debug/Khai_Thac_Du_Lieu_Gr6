@@ -1,0 +1,18 @@
+﻿Thuộc tính,Kiểu dữ liệu,Số giá trị không thiếu
+Area,int64,13611
+Perimeter,float64,13611
+MajorAxisLength,float64,13611
+MinorAxisLength,float64,13611
+AspectRation,float64,13611
+Eccentricity,float64,13611
+ConvexArea,int64,13611
+EquivDiameter,float64,13611
+Extent,float64,13611
+Solidity,float64,13611
+roundness,float64,13611
+Compactness,float64,13611
+ShapeFactor1,float64,13611
+ShapeFactor2,float64,13611
+ShapeFactor3,float64,13611
+ShapeFactor4,float64,13611
+Class,str,13611
