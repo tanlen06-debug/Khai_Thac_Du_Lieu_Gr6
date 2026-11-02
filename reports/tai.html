@@ -7939,15 +7939,29 @@ trong đó $\mu_j$ là giá trị trung bình và $\sigma_j$ là độ lệch ch
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># CLUST-01: Tách đặc trưng hình thái, loại bỏ Class và Chuẩn hóa StandardScaler</span>
 
-<span class="n">data_path</span> <span class="o">=</span> <span class="n">PROCESSED_DIR</span> <span class="o">/</span> <span class="s2">"dry_bean.csv"</span>
-<span class="k">if</span> <span class="ow">not</span> <span class="n">data_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
-    <span class="n">data_path</span> <span class="o">=</span> <span class="n">RAW_DIR</span> <span class="o">/</span> <span class="s2">"D03 - Dry_Bean_Dataset.xlsx"</span>
+<span class="c1"># Kiểm tra các đường dẫn dữ liệu có thể có (ưu tiên processed CSV, sau đó raw Excel, hoặc file gốc ở Downloads)</span>
+<span class="n">possible_paths</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">PROCESSED_DIR</span> <span class="o">/</span> <span class="s2">"dry_bean.csv"</span><span class="p">,</span>
+    <span class="n">RAW_DIR</span> <span class="o">/</span> <span class="s2">"D03 - Dry_Bean_Dataset.xlsx"</span><span class="p">,</span>
+    <span class="n">Path</span><span class="p">(</span><span class="s2">"C:/Users/ASUS/Downloads/D03 - Dry_Bean_Dataset.xlsx"</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="n">data_path</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">possible_paths</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+        <span class="n">data_path</span> <span class="o">=</span> <span class="n">p</span>
+        <span class="k">break</span>
+
+<span class="k">if</span> <span class="n">data_path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">"Không tìm thấy file dữ liệu dry_bean.csv hoặc D03 - Dry_Bean_Dataset.xlsx!"</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Đang đọc dữ liệu từ:"</span><span class="p">,</span> <span class="n">data_path</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">data_path</span><span class="o">.</span><span class="n">suffix</span> <span class="o">==</span> <span class="s1">'.csv'</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">data_path</span><span class="o">.</span><span class="n">suffix</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">'.csv'</span><span class="p">:</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_path</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">data_path</span><span class="p">)</span>
+    <span class="c1"># Lưu ý: File Excel gồm 2 sheet: 'Description' và 'Dry_Beans_Dataset'.</span>
+    <span class="c1"># Cần chỉ định chính xác sheet_name='Dry_Beans_Dataset' để đọc 13.611 dòng dữ liệu thực nghiệm.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">'Dry_Beans_Dataset'</span><span class="p">)</span>
 
 <span class="c1"># Tách riêng 16 đặc trưng số và nhãn mục tiêu</span>
 <span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">col</span> <span class="o">!=</span> <span class="s1">'Class'</span><span class="p">]</span>
