@@ -1,0 +1,55 @@
+{
+  "source_url": "https://raw.githubusercontent.com/tanlen06-debug/Khai_Thac_Du_Lieu_Gr6/733587ca92250378bf201f1b3edad6c0b0db00b6/data/processed/dry_bean.csv",
+  "reference_commit": "733587ca92250378bf201f1b3edad6c0b0db00b6",
+  "actual_csv_sha256": "13ab70eb0c36ac3373e21b30135206505d12d10821b00dca4e06acdcf7fb7c18",
+  "actual_csv_git_blob": "ed7b54400fdc6c684471f424952b1c2b4084a56d",
+  "rows": 13611,
+  "features": [
+    "Area",
+    "Perimeter",
+    "MajorAxisLength",
+    "MinorAxisLength",
+    "AspectRation",
+    "Eccentricity",
+    "ConvexArea",
+    "EquivDiameter",
+    "Extent",
+    "Solidity",
+    "roundness",
+    "Compactness",
+    "ShapeFactor1",
+    "ShapeFactor2",
+    "ShapeFactor3",
+    "ShapeFactor4"
+  ],
+  "classes": [
+    "BARBUNYA",
+    "BOMBAY",
+    "CALI",
+    "DERMASON",
+    "HOROZ",
+    "SEKER",
+    "SIRA"
+  ],
+  "duplicate_rows_retained": 68,
+  "data_policy": "keep_all_rows_as_TV2_EDA",
+  "scaler": "StandardScaler(with_mean=True, with_std=True)",
+  "pca": {
+    "n_components": 2,
+    "svd_solver": "full",
+    "whiten": false
+  },
+  "plot_random_state": 42,
+  "explained_variance_ratio": [
+    0.5546643861267666,
+    0.26430973178662476
+  ],
+  "versions": {
+    "python": "3.14.0",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2"
+  },
+  "cluster_figures_generated": false
+}
