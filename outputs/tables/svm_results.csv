@@ -1,0 +1,2 @@
+﻿Best_Params,Best_CV_F1_Macro,Test_Accuracy,Test_F1_Macro
+"{'svc__C': 10, 'svc__gamma': 'scale', 'svc__kernel': 'rbf'}",0.9440806106070625,0.9243481454278369,0.9360868835466604
