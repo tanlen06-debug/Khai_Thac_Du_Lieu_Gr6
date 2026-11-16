@@ -1,0 +1,5 @@
+Thuật toán,Tham số,Số cụm (không gồm nhiễu),Số điểm nhiễu,Tỷ lệ nhiễu (%),ARI
+K-Means,"k=7, init=k-means++, n_init=10, random_state=42",7,0,0.00%,0.6687
+DBSCAN (Cấu hình tối ưu ARI),"eps=0.8, min_samples=32",4,4400,32.33%,0.2726
+DBSCAN (Khảo sát eps=1.0),"eps=1.0, min_samples=16",2,1234,9.07%,0.0441
+DBSCAN (Khảo sát eps=1.2),"eps=1.2, min_samples=32",2,935,6.87%,0.0398
