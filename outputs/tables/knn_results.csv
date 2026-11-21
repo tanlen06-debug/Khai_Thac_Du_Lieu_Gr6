@@ -1,0 +1,2 @@
+﻿Best_Params,Best_CV_F1_Macro,Test_Accuracy,Test_F1_Macro
+"{'knn__metric': 'minkowski', 'knn__n_neighbors': 15, 'knn__p': 2, 'knn__weights': 'distance'}",0.9378616402464764,0.9188395152405435,0.9322663711653559
